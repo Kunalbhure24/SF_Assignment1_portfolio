@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF_Assignment1_portfolio</title>
+</head>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Ubuntu:ital,wght@1,300&display=swap">
+<style>
+    /* css for header section */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif, cursive;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .header {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgb(7, 7, 7);
+    }
+
+    .left {
+        display: inline-block;
+        margin-left: 25px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+
+    .left img {
+        width: 42px;
+    }
+
+    .left .container {
+        text-align: center;
+        color: whitesmoke;
+        size: 20px;
+    }
+
+    .mid {
+        text-align: right;
+        display: inline-block;
+        width: 72%;
+        margin: 25px auto;
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .navbar li a {
+        color: rgb(241, 247, 245);
+        text-decoration: none;
+        padding: 5px 29px;
+    }
+
+    .navbar li a:hover,
+    .navbar li a:active {
+        text-decoration: underline;
+        color: blue;
+    }
+
+    /* giving padding to avoid overlap with fixed header */
+    #homepage {
+        padding-top: 70px;
+    }
+
+    #project {
+        padding-top: 70px;
+    }
+
+    #skills {
+        padding-top: 70px;
+    }
+
+    #contact {
+        padding-top: 70px;
+    }
+
+    /* css for home page */
+    .homepage {
+        display: flex;
+        margin-top: 175px;
+        /* align-items: left; */
+        background-color: rgb(242, 176, 176);
+        width: 100%;
+    }
+
+    .homepage .flex1 {
+        align-self: center;
+    }
+
+    .homepage h2 {
+        size: 50px;
+        margin-bottom: 0px;
+        margin-left: 25px;
+    }
+
+    .homepage h1 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        size: 45px;
+        margin-top: 2px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    }
+
+    .homepage img {
+        width: 40%;
+        text-align: right;
+        margin-left: 25px;
+    }
+
+    .homepage p {
+        margin-left: 25px;
+    }
+
+    #homepage button {
+        display: inline-block;
+        margin-left: 25px;
+        width: 100px;
+        background-color: black;
+        color: white;
+        border: 2px solid aqua;
+        border-radius: 10px;
+        height: 30px;
+    }
+
+    /* css for projects */
+    .headings {
+        margin-top: 75px;
+        margin-left: 25px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .projects {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .pro1 img,
+    .pro2 img,
+    .pro3 img,
+    .pro4 img,
+    .pro5 img,
+    .pro6 img {
+        width: 100px;
+        align-self: center;
+        margin-top: 20px;
+        margin-left: 35%;
+
+    }
+
+    .pro1,
+    .pro2,
+    .pro3,
+    .pro4,
+    .pro5,
+    .pro6 {
+        margin: 10px;
+        width: 30%;
+        height: 310px;
+        background-color: aquamarine;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+
+    .pro1:hover,
+    .pro2:hover,
+    .pro3:hover,
+    .pro4:hover,
+    .pro5:hover,
+    .pro6:hover {
+        color: rgb(255, 0, 0);
+    }
+
+    h4,
+    p {
+        margin: 25px;
+    }
+
+    .projects .btn1 {
+        font-family: 'Baloo Bhai 2', cursive;
+        margin: 25px;
+        background-color: black;
+        color: white;
+        padding-left: 10px;
+        border: 2px solid grey;
+        border-radius: 10px;
+        width: 50px;
+    }
+
+    .btn1:active,
+    .btn1:hover {
+        background-color: rgb(31, 136, 241);
+    }
+
+    /* css for skills and achivements */
+    .sk1 img,
+    .sk2 img,
+    .sk3 img,
+    .sk4 img,
+    .sk5 img,
+    .sk6 img {
+        width: 100px;
+        align-self: center;
+        margin-top: 20px;
+        margin-left: 35%;
+    }
+
+    .skills {
+        display: grid;
+        grid-template-areas:
+            'sk1 sk1 sk2'
+            'sk3 sk4 sk5'
+            'sk6 sk6 sk5'
+        ;
+        grid-gap: 30px;
+
+    }
+
+    .sk1,
+    .sk2,
+    .sk3,
+    .sk4,
+    .sk5,
+    .sk6 {
+        height: 100%;
+        width: 100%;
+    }
+    .sk1:hover,
+    .sk2:hover,
+    .sk3:hover,
+    .sk4:hover,
+    .sk5:hover,
+    .sk6:hover {
+        background-color: rgb(185, 169, 238);
+        color: rgb(254, 2, 2);
+    }
+    .sk1 {
+        grid-area: sk1;
+        border: 2px solid black;
+    }
+    .sk2 {
+        grid-area: sk2;
+        border: 2px solid black;
+    }
+    .sk3 {
+        grid-area: sk3;
+        border: 2px solid black;
+    }
+    .sk4 {
+        grid-area: sk4;
+        border: 2px solid black;
+    }
+    .sk5 {
+        grid-area: sk5;
+        border: 2px solid black;
+    }
+    .sk6 {
+        grid-area: sk6;
+        border: 2px solid black;
+    }
+
+    /* css for form */
+    .contact {
+        background: url(pexels-garvin-st-villier-3972755.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid rgb(0, 0, 0);
+        margin: 80px 100px;
+        padding: 34px 64px;
+        width: 70%;
+        height: 400px;
+        border-radius: 16px;
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .form input {
+        width: 500px;
+        height: 20px;
+        margin: 8px auto;
+        padding: 5px;
+        border: 2px solid red;
+        border-radius: 5px;
+    }
+
+    .contact button {
+        font-family: 'Baloo Bhai 2', cursive;
+        margin: 8px auto;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        border: 4px solid aqua;
+        border-radius: 10px;
+        width: 200px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <header class="header">
+        <!-- left for logo -->
+        <div class="left">
+            <img src="folio.jpg" alt="">
+            <div class="container">
+                PORTFOLIO
+            </div>
+        </div>
+        <!--mid for navbar-->
+        <div class="mid">
+            <ul class="navbar">
+                <li> <a href="#homepage">Home</a></li>
+                <li><a href="#project">Projects </a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact </a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="homepage">
+        <div class="homepage">
+            <div class="flex1">
+                <h2>Hello</h2>
+                <h1>My name is Kunal Bhure</h1>
+                <h1>I am a web developer</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae esse itaque quaerat? Sit maxime
+                    excepturi
+                    enim repellendus reiciendis commodi incidunt asperiores voluptates nulla mollitia? lorem20</p>
+                <div class="btn">
+                    <button>Contact me</button>
+                </div>
+            </div>
+            <div class="flex2">
+                <img src="man.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="project">
+        <div class="headings">
+            <h1>My projects</h1>
+        </div>
+        <div class="projects">
+            <div class="pro1">
+                <img src="facebook.jpg" alt="">
+                <h4>Facebook prototype</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis corporis rerum dolorum
+                    obcaecati
+                    facilis totam!</p>
+                <div class="btn1">
+                    <button> Visit</button>
+                </div>
+
+            </div>
+            <div class="pro2">
+                <img src="library.jpg" alt="">
+                <h4>Library site</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis corporis rerum dolorum
+                    obcaecati
+                    facilis totam!</p>
+                <div class="btn1">
+                    <button> Visit</button>
+                </div>
+
+            </div>
+            <div class="pro3">
+                <img src="online shop.webp" alt="">
+                <h4>Online mart</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis corporis rerum dolorum
+                    obcaecati
+                    facilis totam!</p>
+                <div class="btn1">
+                    <button> Visit</button>
+                </div>
+
+            </div>
+            <div class="pro4">
+                <img src="landing page.jpg" alt="">
+                <h4>landing page</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis corporis rerum dolorum
+                    obcaecati
+                    facilis totam!</p>
+                <div class="btn1">
+                    <button> Visit</button>
+                </div>
+
+            </div>
+            <div class="pro5">
+                <img src="brochure.jpg" alt="">
+                <h4>Brochure</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis corporis rerum dolorum
+                    obcaecati
+                    facilis totam!</p>
+                <div class="btn1">
+                    <button> Visit</button>
+                </div>
+
+            </div>
+            <div class="pro6">
+                <img src="funding.jpg" alt="">
+                <h4>Crowd funding</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis corporis rerum dolorum
+                    obcaecati
+                    facilis totam!</p>
+                <div class="btn1">
+                    <button> Visit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="skills">
+        <div class="headings">
+            <h1>My skills & achievements</h1>
+        </div>
+        <div class="skills">
+            <div class="sk1">
+                <img src="problemsol.jpg" alt="">
+                <h4>Problem solving</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit accusantium in eos eius
+                    veniam,
+                    placeat facilis! Nihil incidunt iste cupiditate libero quo. Aliquam, placeat.</p>
+            </div>
+            <div class="sk2">
+                <img src="organizational.png" alt="">
+                <h4>Organizational skills</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit accusantium in eos eius
+                    veniam,
+                    placeat facilis! Nihil incidunt iste cupiditate libero quo. Aliquam, placeat.</p>
+            </div>
+            <div class="sk3">
+                <img src="creative.jpg" alt="">
+                <h4>Creative thinking</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit accusantium in eos eius
+                    veniam,
+                    placeat facilis! Nihil incidunt iste cupiditate libero quo. Aliquam, placeat.</p>
+            </div>
+            <div class="sk4">
+                <img src="languages.jpg" alt="">
+                <h4>Command on languages</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit accusantium in eos eius
+                    veniam,
+                    placeat facilis! Nihil incidunt iste cupiditate libero quo. Aliquam, placeat.</p>
+            </div>
+            <div class="sk5">
+                <img src="projects.jfif" alt="">
+                <h4>Worked on many projects</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit accusantium in eos eius
+                    veniam,
+                    placeat facilis! Nihil incidunt iste cupiditate libero quo. Aliquam, Lorem ipsum, dolor sit amet
+                    consectetur adipisicing elit. Expedita modi labore quasi magnam in sapiente ea ipsa atque quisquam
+                    hic,
+                    porro aliquam numquam, reprehenderit quas, cum similique! Veniam est atque suscipit officiis!
+                    Eligendi
+                    minus fugit veniam exercitationem quae doloribus non illo, fuga, fugiat, eius necessitatibus facilis
+                    quas iusto hic voluptatibus! Sit culpa repudiandae reiciendis fugit quod dolorum, consequuntur esse
+                    suscipit dignissimos rem ullam delectus quasi possimus repellendus perferendis maxime nisi.
+                    Quibusdam
+                    dicta, non ut a fugiat dolores consequatur ducimus impedit asperiores sapiente modi iure numquam
+                    delectus nulla expedita dolorem quidem eos, molestiae consequuntur placeat. Excepturi nesciunt
+                    officia
+                    quaerat ratione quidem! </p>
+            </div>
+            <div class="sk6">
+                <img src="ui.png" alt="">
+                <h4>proeficient in UI/UX</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fugit accusantium in eos eius
+                    veniam,
+                    placeat facilis! Nihil incidunt iste cupiditate libero quo. Aliquam, placeat.</p>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="contact">
+            <h1>Contact Form</h1>
+            <form action="noaction.php">
+                <div class="form">
+                    <input type="text" placeholder="Enter your Name">
+                </div>
+                <div class="form">
+                    <input type="text" placeholder="Enter your Email-Id">
+                </div>
+                <div class="form">
+                    <input type="text" placeholder="Enter date of appointment">
+                </div>
+                <div class="form">
+                    <input type="text" placeholder="Type any message....">
+                </div>
+                <button class="btn3">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
